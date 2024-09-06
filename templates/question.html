@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Question {{ q + 1 }}</h1>
+    <p>{{ question['question'] }}</p>
+    <form method="post">
+        {% for option in question['options'] %}
+            <input type="radio" name="answer" value="{{ option }}" required> {{ option }}<br>
+        {% endfor %}
+        <button type="submit">Next</button>
+    </form>
+    <footer>Geliştirici: MERYEM BUSRA CELIK</footer>
+</body>
+</html>
